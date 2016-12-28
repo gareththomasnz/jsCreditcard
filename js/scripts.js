@@ -33,6 +33,14 @@ $( function(){
                 $("h2 span").removeClass("active");
                 });
         
+        paymentButton.click(function(event) {
+                event.preventDefault();
+                if($(this).hasClass("disabled")){
+                        return false;
+                }
+                $("#card-form").submit();
+                });
+        
         function finishTyping(id, value){
               switch(id)  {
                 case "cc-number":

@@ -14,12 +14,23 @@ $( function(){
         number.focus();
         
         ccInputs.keyup(function(e) {
-                clearTimeout(timer);
-                timer = setTimeout(finishTyping, timerInterval, $(this).attr("id"), $(this).val());
+                if(e.keyCode != '9' && e.keyCode != '16'){
+                        clearTimeout(timer);
+                        timer = setTimeout(finishTyping, timerInterval, $(this).attr("id"), $(this).val());      
+                }
+
                 });
         
         ccInputs.keydown(function() {
                 clearTimeout(timer);
+                });
+        
+        ccInputs.focus(function() {
+                $("title-" + $(this).attr("id")).addClass("active");
+                });
+        
+        ccInputs.blur(function() {
+                $("h2 span").removeClass("active");
                 });
         
         function finishTyping(id, value){

@@ -1,4 +1,4 @@
-# Javascript Credit card Validation
+# Javascript Credit Card Validation
 
 Javascript simple single page app
 
